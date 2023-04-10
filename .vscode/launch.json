@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "name": "http://C:\\Users\\katar\\OneDrive\\Área de Trabalho\\aprendizagens back\\todo-avancado-js-main\\index.html",
+            "request": "launch",
+            "url": "http://C:\\Users\\katar\\OneDrive\\Área de Trabalho\\aprendizagens back\\todo-avancado-js-main\\index.html"
+        }
+    ]
+}

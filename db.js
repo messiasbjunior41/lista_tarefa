@@ -1,17 +1,46 @@
-const mongoose = require("mongoose");
+//Conexão com o BD Mysql
+const mysql = require ('mysql');
+const connection =mysql.createConnection({
+  host:'localhost',
+  user:'root',
+  password:'506216',
+  database:'lista_tarefa'
 
-require("dotenv").config();
+});
+conexão . conectar ( função ( error ) { 
+  if (  error ) {  
+    console . error  ( ' erro ao conectar:  ' +  error  . pilha )   ;
+    retorno ;
+  }
+ 
+  console.log ( ' conectado como id  ' + conexão . threadId )   ;
+} );
+connection.query('SELECT * FROM  lista',
+function( error ,rows,fields){
+   if(! error ){
+    console.log('Resultado:',rows);
+    else{
+        console.log('Erro ao realizar a consulta');
+    }
+   }
+})
 
-mongoose.set("strictQuery", true);
+// const mongoose = require("mongoose");
 
-main().catch((error) => console.log(error));
+// require("dotenv").config();
 
-async function main() {
-  await mongoose.connect(
-    `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASS}@cluster0.rvt6uwq.mongodb.net/?retryWrites=true&w=majority`
-  );
+// mongoose.set("strictQuery", true);
 
-  console.log("Conectado com sucesso!");
-}
+// main().catch((error) => console.log(error));
 
-module.exports = main;
+// async function main() {
+//   await mongoose.connect(
+    
+//     `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASS}@cluster0.rvt6uwq.mongodb.net/?retryWrites=true&w=majority`
+//   );
+
+//   console.log("Conectado com sucesso!");
+// }
+
+// module.exports = main;
+

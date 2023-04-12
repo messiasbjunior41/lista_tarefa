@@ -13,7 +13,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-      
     <script src="js/scripts.js" defer></script>
   </head>
   <body>
@@ -21,6 +20,20 @@
       <header>
         <h1>Lista de Tarefas</h1>
       </header>
+
+      <form id="todo-form">
+        <p>Nome</p>
+        <div class="form-control">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Nome do execultante?"
+          />
+          <button type="submit">
+            <i class="fa-thin fa-plus"></i>
+          </button>
+        </div>
+        </form>
       <form id="todo-form">
         <p>Adicione sua tarefa</p>
         <div class="form-control">
@@ -33,6 +46,7 @@
             <i class="fa-thin fa-plus"></i>
           </button>
         </div>
+       
       </form>
       <!-- <form id="todo-form">
         <p>Data do cadastro </p>
@@ -45,8 +59,8 @@
           <button type="submit">
             <i class="fa-thin fa-plus"></i>
           </button>
-        </div> -->
-      </form>
+        </div>
+      </form> -->
       <form id="edit-form" class="hide">
         <p>Edite sua tarefa</p>
         <div class="form-control">
@@ -74,15 +88,15 @@
             <option value="all">Todos</option>
             <option value="done">Feitos</option>
             <option value="todo">A fazer</option>
+            <!-- <option value="all">Por Nome</option> -->
           </select>
         </div>
       </div>
       <div id="todo-list">
         
-          Template
-          
+        <h4> Template</h4>
           <div class="todo">
-          <h3>Estou fazendo algo aqui...</h3>
+          <h3> Estou fazendo algo aqui...</h3>
           <button class="finish-todo">
             <i class="fa-solid fa-check"></i>
           </button>
@@ -92,28 +106,29 @@
           <button class="remove-todo">
             <i class="fa-solid fa-xmark"></i>
           </button>
+          </div>
         </div> 
       </div>
     </div>
     <div>
-      <button><button disabled="disabled"></button></button>
+      <!-- <button><button disabled="disabled"></button></button> -->
      </div>
     <Script>
       
       const formEl = document. getElementByid('form-api')
 
-      formEl.addEventlistener('submit',lista=> {
+      formEl.addEventlistener('submit',pessoa=> {
         evento.preventDefault();
-        const formaData = new formaData(formEl);
-        const data = Object.fromEntries(formaData);
+        const formaPessoa = new formaPessoa(formEl);
+        const pessoa = Object.fromEntries(formaPessoa);
 
           fetch('htpps://reqres.in/api/users',{
             method:'POST',
             headers:{
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
-          }).then(res=> res.json()).then(data=> console.log(data))
+            body: JSON.stringify(pessoa)
+          }).then(res=> res.json()).then(pessoa=> console.log(pessoa))
   
       })
     
